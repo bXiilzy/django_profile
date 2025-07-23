@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>นางสาวจีรนันท์ เกิดกล้า</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #ea66a1 0%, #c17f8f 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --success-gradient: linear-gradient(135deg, #c671dd 0%, #00f2fe 100%);
+            --dark-gradient: linear-gradient(135deg, #ea7ed3 0%, #3498db 100%);
+            --glass-bg: rgba(255, 255, 255, 0.25);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --shadow-light: 0 8px 32px rgba(31, 38, 135, 0.37);
+            --shadow-heavy: 0 15px 35px rgba(152, 141, 141, 0.1);
+            --neon-glow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Kanit', sans-serif;
+            background: var(--glass-bg);
+            color: #8317ae;
+            margin: 0;
+            padding: 0;
+            padding-top: 80px; /* Space for fixed navbar */
+        }
+        
+        /* Navbar Styles */
+        .navbar-custom {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-light);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-custom .navbar-brand {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        
+        .navbar-custom .nav-link {
+            color: #8317ae !important;
+            font-weight: 500;
+            margin: 0 10px;
+            padding: 8px 16px !important;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .navbar-custom .nav-link:hover {
+            background: var(--secondary-gradient);
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: var(--neon-glow);
+        }
+        
+        .navbar-custom .nav-link.active {
+            background: var(--primary-gradient);
+            color: white !important;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 4px 8px;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23c17f8f' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .card-header {
+            background: var(--primary-gradient);
+            color: white;
+            border-radius: 10px 10px 0 0;
+            padding: 15px;
+            font-size: 1.5rem;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-footer {
+            background: var(--glass-bg);
+            border-top: 1px solid var(--glass-border);
+            padding: 15px;
+            text-align: right;
+        }
+        .btn {
+            background: var(--secondary-gradient);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background: var(--success-gradient);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-heavy);
+            color: white;
+        }
+        .btn:focus {
+            box-shadow: var(--neon-glow);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--dark-gradient);
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer a {
+            color: #f093fb;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #045a51;
+        }
+        .social-icons a {
+            color: rgb(211, 71, 85);
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #d36cbb;
+            transform: translateY(-3px);
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid var(--primary-gradient);
+            box-shadow: var(--shadow-heavy);
+            transition: all 0.3s ease;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(152, 141, 141, 0.2);
+        }
+        
+        .profile-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .profile-info h1 {
+            font-size: 2rem;
+            color: var(--primary-gradient);
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .profile-info p {
+            font-size: 1.2rem;
+            color: #000000;
+        }
+        .profile-info a {
+            color: var(--secondary-gradient);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .profile-info a:hover {
+            color: var(--success-gradient);
+        }
+        
+        /* Section styles for different pages */
+        .content-section {
+            min-height: 400px;
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            .card-header {
+                font-size: 1.25rem;
+            }
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            .profile-info h1 {
+                font-size: 1.5rem;
+            }
+            .profile-info p {
+                font-size: 1rem;
+            }
+            .social-icons a {
+                font-size: 1.2rem;
+            }
+            .btn {
+                padding: 8px 16px;
+            }
+            .footer {
+                font-size: 0.9rem;
+            }
+            .footer a {
+                font-size: 0.9rem;
+            }
+            
+            .navbar-custom .nav-link {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-user-circle me-2"></i>Jiranan Profile
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home" onclick="showSection('home')">
+                            <i class="fas fa-home me-1"></i>หน้าหลัก
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" onclick="showSection('about')">
+                            <i class="fas fa-user me-1"></i>เกี่ยวกับฉัน
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" onclick="showSection('contact')">
+                            <i class="fas fa-envelope me-1"></i>ติดต่อ
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Home Section -->
+        <div id="home" class="content-section active">
+            <div class="card mt-5">
+                <div class="card-header text-center">
+                    <img src="https://scontent.fnak4-1.fna.fbcdn.net/v/t39.30808-1/471666690_1860936947973330_4945651447005674246_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=1d2534&_nc_ohc=W-4w-Lpxbb4Q7kNvwE4QVII&_nc_oc=AdnBQUROZ32roOLEwDUjXkMYlkiR_W_OE3swYXM0Ke3_8oINnyzDVAqX3FAuH_MiW2Bk7Dce8D4rJT_dKZVt2uAE&_nc_zt=24&_nc_ht=scontent.fnak4-1.fna&_nc_gid=0Ej-z4pcrCy1woagWlfMSA&oh=00_AfSB-tZJyOssdsgP1lV8_D5Rtcph3DOhbKkYysTk1e6a4w&oe=6883856E" alt="Profile" class="profile-image mb-3">
+                    <div class="profile-info">
+                        <h1>นางสาวจีรนันท์ เกิดกล้า</h1>
+                        <p>นักศึกษาวิทยาการคอมพิวเตอร์<br>มหาวิทยาลัยราชภัฏศรีสะเกษ</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/share/16UTkw68zr/?mibextid=LQQJ4d" title="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/1bxil__?igsh=MWYwcHJzNXVzcWZ1Yg%3D%3D&utm_source=qr" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://github.com/bXiilzy" title="Github"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5>ยินดีต้อนรับสู่โปรไฟล์ของฉัน</h5>
+                    <p>สวัสดีค่ะ นางสาวจีรนันท์ เกิดกล้า สนใจด้านเทคโนโลยีและการพัฒนาเว็บไซต์<br>พร้อมเรียนรู้สิ่งใหม่ ๆ เสมอ
+                    <br>ฉันพร้อมที่จะทำในสิ่งที่ตัวเองไม่เคยทำอยู่เสมอ</p>
+                    <a href="#contact" class="btn" onclick="showSection('contact')">ติดต่อฉัน</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div id="about" class="content-section">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <i class="fas fa-user me-2"></i>เกี่ยวกับฉัน
+                </div>
+                <div class="card-body">
+                    <h5>ประวัติส่วนตัว</h5>
+                    <p>ฉันเป็นนักศึกษาวิทยาการคอมพิวเตอร์ที่มีความหลงใหลในการพัฒนาเว็บไซต์และเทคโนโลยีใหม่ๆ 
+                    ฉันชอบการเรียนรู้และท้าทายตัวเองกับสิ่งใหม่ๆ อยู่เสมอ</p>
+                    <h5>ข้อมูลส่วนตัว</h5>
+                    <strong>วันเกิด:</strong> 1 มกราคม 2548<br>ฉันเป็นคนจังหวัดกาญจนบุรี ที่มาเรียนอยู่ที่จังหวัดศรีสะเกษ<br>
+                    <h5 class="mt-4">การศึกษา</h5>
+                    <p><strong>มหาวิทยาลัยราชภัฏศรีสะเกษ</strong><br>
+                    คณะศิลปศาสตร์และวิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์</p>
+                    
+                    <h5 class="mt-4">ความสนใจ</h5>
+                    <p>• การพัฒนาเว็บไซต์<br>
+                    • เทคโนโลยีใหม่ๆ<br>
+                    • การเรียนรู้ภาษาโปรแกรมมิ่ง<br>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="content-section">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <i class="fas fa-envelope me-2"></i>ติดต่อฉัน
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>ข้อมูลติดต่อ</h5>
+                            <p><i class="fas fa-user me-2"></i><strong>ชื่อ:</strong> นางสาวจีรนันท์ เกิดกล้า<br>
+                            <i class="fas fa-graduation-cap me-2"></i><strong>สถาบัน:</strong> มหาวิทยาลัยราชภัฏศรีสะเกษ<br>
+                            <i class="fas fa-book me-2"></i><strong>สาขา:</strong> วิทยาการคอมพิวเตอร์</p>
+                            
+                            <h5 class="mt-4">โซเชียลมีเดีย</h5>
+                            <div class="social-icons" style="text-align: left;">
+                                <a href="https://www.facebook.com/share/16UTkw68zr/?mibextid=LQQJ4d" title="Facebook">
+                                    <i class="fab fa-facebook"></i> Facebook
+                                </a><br>
+                                <a href="https://www.instagram.com/1bxil__?igsh=MWYwcHJzNXVzcWZ1Yg%3D%3D&utm_source=qr" title="Instagram">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a><br>
+                                <a href="https://github.com/bXiilzy" title="Github">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>ส่งข้อความหาฉัน</h5>
+                            <form>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="ชื่อของคุณ" style="background: var(--glass-bg); border: 1px solid var(--glass-border);">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="อีเมลของคุณ" style="background: var(--glass-bg); border: 1px solid var(--glass-border);">
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="4" placeholder="ข้อความของคุณ" style="background: var(--glass-bg); border: 1px solid var(--glass-border);"></textarea>
+                                </div>
+                                <button type="submit" class="btn">ส่งข้อความ</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        &copy; bXiilzy
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update active nav link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Add active class to clicked nav link
+            event.target.classList.add('active');
+            
+            // Close mobile menu if open
+            const navbarCollapse = document.getElementById('navbarNav');
+            if (navbarCollapse.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                bsCollapse.hide();
+            }
+        }
+        
+        // Smooth scrolling effect
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add scroll effect to navbar
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar-custom');
+                if (window.scrollY > 50) {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.35)';
+                    navbar.style.backdropFilter = 'blur(20px)';
+                } else {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.25)';
+                    navbar.style.backdropFilter = 'blur(15px)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
