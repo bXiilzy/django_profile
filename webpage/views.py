@@ -20,3 +20,9 @@ def contact(request):
     Render the contact page.
     """
     return render(request, 'contact.html')
+
+def for_page(request):
+    """
+    Render the 'for' page.
+    """
+    return render(request, 'for.html')
