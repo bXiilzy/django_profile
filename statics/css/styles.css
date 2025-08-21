@@ -3,13 +3,13 @@ body {
     font-family: 'Kanit', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    background: linear-gradient(to right, #becfd5, #72b9d7);
     color: #333;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #ff7e5f;
+    background-color: #326ba4;
 }
 .navbar-brand, .nav-link {
     color: #fff !important;
@@ -29,7 +29,7 @@ body {
     transform: translateY(-10px);
 }
 .card-header {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background: linear-gradient(to right, #45a6c1, #93c9df);
     color: #fff;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -37,7 +37,7 @@ body {
 
 /* Button */
 .btn {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background: linear-gradient(to right, #4b77ac, #355177);
     border: none;
     color: #fff;
     padding: 10px 20px;
@@ -45,7 +45,7 @@ body {
     transition: background 0.3s;
 }
 .btn:hover {
-    background: linear-gradient(to right, #feb47b, #ff7e5f);
+    background: linear-gradient(to right, #5d78a1, #486c97);
     color: #fff;
 }
 
@@ -63,7 +63,9 @@ body {
     margin-top: 50px;
     text-align: center;
     padding: 20px;
-    background: #ff7e5f;
+    background: #506fbc;
     color: #fff;
     border-radius: 0 0 15px 15px;
 }
+
+/* Responsive Design */
