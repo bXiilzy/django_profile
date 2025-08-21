@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}ติดต่อฉัน{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="card-header"><i class="fas fa-envelope me-2"></i>ติดต่อฉัน</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <h5>ข้อมูลติดต่อ</h5>
+        <p><i class="fas fa-user me-2"></i>นางสาวจีรนันท์ เกิดกล้า<br>
+           <i class="fas fa-graduation-cap me-2"></i>มหาวิทยาลัยราชภัฏศรีสะเกษ<br>
+           <i class="fas fa-book me-2"></i>วิทยาการคอมพิวเตอร์</p>
+        <h5 class="mt-3">โซเชียลมีเดีย</h5>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/share/16UTkw68zr/?mibextid=LQQJ4d"><i class="fab fa-facebook"></i> Facebook</a><br>
+          <a href="https://www.instagram.com/1bxil__"><i class="fab fa-instagram"></i> Instagram</a><br>
+          <a href="https://github.com/bXiilzy"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h5>ส่งข้อความหาฉัน</h5>
+        <form>
+          <div class="mb-3"><input type="text" class="form-control" placeholder="ชื่อของคุณ"></div>
+          <div class="mb-3"><input type="email" class="form-control" placeholder="อีเมลของคุณ"></div>
+          <div class="mb-3"><textarea class="form-control" rows="4" placeholder="ข้อความของคุณ"></textarea></div>
+          <button type="submit" class="btn">ส่งข้อความ</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
